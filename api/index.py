@@ -10,7 +10,7 @@ def home():
         data = request.get_json()
         return "POst"
     else:
-        return 'Hello, World!'
+        return render_template("main.html")
 
 @app.route('/about')
 def about():
