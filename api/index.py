@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
 import pandas as pd
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 data = pd.read_csv('water_potability.csv')
@@ -28,3 +28,4 @@ def home():
         return jsonify({'potable': potable, 'values': values})
     else:
         return render_template("main.html")
+    
