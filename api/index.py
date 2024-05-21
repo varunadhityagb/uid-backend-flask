@@ -3,7 +3,7 @@ from flask_cors import CORS
 import pandas as pd
 
 app = Flask(__name__, template_folder='templates')
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 data = pd.read_csv('water_potability.csv')
 
